@@ -5,7 +5,7 @@ node {
    def IMAGE="${registryProjet}:version-${env.BUILD_ID}"
 
     stage('Clone') {
-          git credentialsID: 'gitlab', url:'https://registry.gitlab.com/wilgates1/jenkins-build-docker.git'
+          checkout scm
     }
 
     def img = stage('Build') {
